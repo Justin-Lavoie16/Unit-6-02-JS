@@ -8,12 +8,14 @@ if (navigator.serviceWorker) {
   })
 }
 
-;("use strict")
+"use strict"
 
 function myButtonClicked() {
   if (localStorage.CookieCountGoUp) {
-    localStorage.CookieCountGoUp = Number(localStorage.CookieCountGoUp) + 1
+    localStorage.CookieCountGoUp = Number(localStorage.CookieCountGoUp) + 1;
+  } else {
+    localStorage.CookieCountGoUp = +1;
   }
   document.getElementById("answers").innerHTML =
-    "You Clicked This Cookie " + localStorage.CookieCountGoUp + " Times already"
+    "You have clicked the cookie " + localStorage.CookieCountGoUp + " times already";
 }
